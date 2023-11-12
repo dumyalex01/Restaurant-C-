@@ -8,6 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("operator.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("order-now.png")]
 
 

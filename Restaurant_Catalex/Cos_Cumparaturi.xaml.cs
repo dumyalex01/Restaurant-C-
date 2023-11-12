@@ -22,18 +22,41 @@ namespace Restaurant_Catalex
     {
         Grid[] grids;
         static int gridsCounter;
+        private string[] info;
        
-        public Cos_Cumparaturi()
+        public Cos_Cumparaturi(string[] informatii)
         {
             InitializeComponent();
             grids = new Grid[15];
             gridsCounter = 0;
-            
+            this.info = new string[11];
+            this.info = informatii;
+            this.Bani.Content = this.info[10] + " lei";
 
 
         }
+       public int getTotalCumparaturi()
+        {
+            int sum = 0;
+            for (int i = 0; i < gridsCounter; i++)
+            {
+                foreach (UIElement element in grids[i].Children)
+                {
+                    if (element is Label)
+                    {
+                        Label eticheta = (Label)element;
+                        if (eticheta.Content.ToString().Contains("lei"))
+                        {
+                            string aux = eticheta.Content.ToString();
+                            var numar = aux.Split(' ');
+                            sum = sum + int.Parse(numar[0]);
+                        }
+                    }
+                }
+            }
+            return sum;
+        }
         public void add_to_cart(Grid A)
-
         {
             grids[gridsCounter] = new Grid();
             grids[gridsCounter] = A;
@@ -42,20 +65,22 @@ namespace Restaurant_Catalex
         }
         public void removeProduct(int index)
         {
-            for (int i = index; i < gridsCounter; i++)
+            grids[index].Children.Clear();
+            for (int i = index; i < gridsCounter-1; i++)
                 grids[i] = grids[i + 1];
             gridsCounter--;
-            grids[index].Children.Clear();
             Reconstruct();
         }
-        private void Reconstruct()
+        public void Reconstruct()
         {
-            int marginTop = 20;
+            int marginTop = 0;
             for (int i = 0; i < gridsCounter; i++)
             {
-                grids[i].Margin = new Thickness(20, marginTop, 0, 0);
-                marginTop += 20;
+                grids[i].Margin = new Thickness(0, marginTop, 0, 0);
+                marginTop += 35;
             }
+            int sum = getTotalCumparaturi();
+            Total.Content = sum.ToString() + " lei";
 
         }
         public int getIndexToRemove(string nume)
@@ -74,6 +99,10 @@ namespace Restaurant_Catalex
             }
             return -1;
         }
-          
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            this.Hide();
+        }
     }
 }

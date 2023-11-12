@@ -24,6 +24,7 @@ namespace Restaurant_Catalex
         private Label Ingrediente;
         private Label Pret;
         private Button butonAdd;
+        private TextBlock text;
         public Cos_Cumparaturi myCos;
         static int margine = 0;
         public MyGrid(int leftMargin,int topMargin,string ingrediente,string numeProdus,int calorii,int pret,Cos_Cumparaturi  Cos)
@@ -61,6 +62,7 @@ namespace Restaurant_Catalex
             A.Children.Add(Ingrediente);
             A.Children.Add(Pret);
             A.Children.Add(butonAdd);
+
          
 
         }
@@ -68,8 +70,9 @@ namespace Restaurant_Catalex
         private void butonAdd_Click(object sender, RoutedEventArgs e)
         {
             CartGrid G = new CartGrid(Nume.Content.ToString(), Pret.Content.ToString(), Ingrediente.Content.ToString(), 10, margine,myCos);
-            margine += 30;
+            margine += 40;
             myCos.add_to_cart(G.getGrid());
+            myCos.Reconstruct();
         }
         public Grid getGrid()
         {

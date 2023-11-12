@@ -39,7 +39,7 @@
             </Button.Background>
         </Button>
         <Grid HorizontalAlignment="Left" Height="100" Margin="-361,57,0,0" VerticalAlignment="Top" Width="100"/>
-        <Ellipse HorizontalAlignment="Left" Height="77" Margin="700,24,0,0" Stroke="Black" VerticalAlignment="Top" Width="74">
+        <Ellipse x:Name="Elipsa" HorizontalAlignment="Left" Height="77" Margin="700,24,0,0" Stroke="Black" VerticalAlignment="Top" Width="74">
             <Ellipse.Fill>
                 <ImageBrush ImageSource="shopping-cart.png"/>
             </Ellipse.Fill>
@@ -55,13 +55,12 @@
                 <ImageBrush ImageSource="operator.png"/>
             </Button.Background>
         </Button>
-        <Grid x:Name="GMeniu" HorizontalAlignment="Left" Height="481" Margin="112,3,-0.4,0" VerticalAlignment="Top" Width="682" Grid.RowSpan="2">
-            <Button Content="Button" HorizontalAlignment="Left" Margin="609,446,-2,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
-        </Grid>
+        <Grid x:Name="GMeniu" HorizontalAlignment="Left" Height="481" Margin="112,3,-0.4,0" VerticalAlignment="Top" Width="682" Grid.RowSpan="2"/>
         <Button Content="" HorizontalAlignment="Left" Margin="0,22,0,0" Grid.Row="1" VerticalAlignment="Top" Width="110" Height="83" BorderBrush="#FFB12626">
             <Button.Background>
                 <ImageBrush ImageSource="salad.png"/>
             </Button.Background>
         </Button>
+        <Label Content="Label" HorizontalAlignment="Left" Margin="721,54,0,0" VerticalAlignment="Top"/>
     </Grid>
 </Window>

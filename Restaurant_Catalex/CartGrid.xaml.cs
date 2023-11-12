@@ -25,7 +25,8 @@ namespace Restaurant_Catalex
         public Label Pret;
         public Label Nume;
         public Label Ingrediente;
-        public Button remove;
+        private TextBlock text;
+        private Button removeButton;
         Cos_Cumparaturi myCos;
 
         public CartGrid(string nume, string pret, string ingrediente, int marginLeft, int marginTop, Cos_Cumparaturi cos)
@@ -51,21 +52,30 @@ namespace Restaurant_Catalex
             Pret.FontSize = 10;
             Pret.FontWeight = FontWeights.Bold;
 
-            remove = new Button();
-            remove.Content = "Hello!";
-            remove.Width = 20;
-            remove.Height = 20;
-            remove.Click += remove_Clicked;
+            removeButton = new Button();
+            ImageBrush imageBrush = new ImageBrush();
+            imageBrush.ImageSource = new BitmapImage(new Uri("C:/Users/Alex/Desktop/Anul_3/ABD/Restaurant_Catalex/delete-button.png", UriKind.Absolute));
+            removeButton.Width = 20;
+            removeButton.Height = 20;
+            removeButton.VerticalAlignment = VerticalAlignment.Top;
+            removeButton.HorizontalAlignment = HorizontalAlignment.Center;
+            removeButton.Background = imageBrush;
+            removeButton.Margin = new Thickness(0, 10, 0, 0);
+            removeButton.BorderThickness = new Thickness(0);
+            removeButton.Click += removeButton_Clicked;
 
-            A.Children.Add(remove);
+
             A.Children.Add(Nume);
             A.Children.Add(Pret);
             A.Children.Add(Ingrediente);
+            A.Children.Add(removeButton);
         }
-
-        private void remove_Clicked(object sender, RoutedEventArgs e)
+        private void removeButton_Clicked(object sender, RoutedEventArgs e)
         {
-            Console.WriteLine("HELLO!");
+            string nume = Nume.Content.ToString();
+            int index = myCos.getIndexToRemove(nume);
+            myCos.removeProduct(index);
+           
         }
 
         public Grid getGrid()

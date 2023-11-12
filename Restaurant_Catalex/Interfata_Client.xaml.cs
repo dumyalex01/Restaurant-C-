@@ -26,12 +26,18 @@ namespace Restaurant_Catalex
         public Interfata_Client(string[] Informatii)
         {
             InitializeComponent();
-            Cos = new Cos_Cumparaturi();
+            Cos = new Cos_Cumparaturi(Informatii);
             Infos = new string[11];
             for (int i = 0; i <= 10; i++)
                 Infos[i] = Informatii[i];
+            Elipsa.MouseLeftButtonDown += Elipsa_Click;
            
             
+        }
+      
+        private void Elipsa_Click(object sender, RoutedEventArgs e)
+        {
+            Cos.Show();
         }
         private void show_Menu(string type)
         {
@@ -128,13 +134,7 @@ namespace Restaurant_Catalex
             Title.Content = "          Mic dejunul campionilor!";
             Title.FontSize = 20;
             show_Menu("Mic Dejun");
-            Cos.Show();
-        }
-
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            Cos.Show();
+           
         }
     }
 }

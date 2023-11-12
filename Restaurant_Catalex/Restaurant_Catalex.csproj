@@ -198,5 +198,8 @@
   <ItemGroup>
     <Resource Include="operator.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="reject.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

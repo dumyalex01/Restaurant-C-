@@ -1,0 +1,66 @@
+﻿<Window x:Class="Restaurant_Catalex.Interfata_Client"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Restaurant_Catalex"
+        mc:Ignorable="d"
+        Title="Interfata_Client" Height="516.133" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="304"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Frame Content="" HorizontalAlignment="Left" Height="486" VerticalAlignment="Top" Width="110" BorderBrush="#FF1AD8DC" Background="#FF1AD8DC" Grid.RowSpan="2"/>
+        <Button x:Name="Pizza" Content="" HorizontalAlignment="Left" Margin="0,108,0,0" VerticalAlignment="Top" Width="110" Height="46" BorderBrush="#FF7A1F1F" Click="Pizza_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="pizza.png"/>
+            </Button.Background>
+        </Button>
+        <Frame Content="" HorizontalAlignment="Left" Height="49" Margin="0,204,0,0" VerticalAlignment="Top" Width="110"/>
+        <Button x:Name="Burger" Content="" HorizontalAlignment="Right" Margin="0,154,682.6,0" VerticalAlignment="Top" Width="111" Height="50" BorderBrush="#FFBF1919" Click="Burger_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="burger.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="Supe" Content="" HorizontalAlignment="Left" Margin="0,203,0,0" VerticalAlignment="Top" Width="110" Height="58" BorderBrush="#FFC01B1B" Click="Supe_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="soup.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="Bauturi" Content="" HorizontalAlignment="Left" Margin="1,260,0,0" VerticalAlignment="Top" Width="109" Height="67" BorderBrush="#FFD01E1E" Click="Bauturi_Click" Grid.RowSpan="2">
+            <Button.Background>
+                <ImageBrush ImageSource="soda.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="MicDejun" Content="" HorizontalAlignment="Left" Margin="0,105,0,0" Grid.Row="1" VerticalAlignment="Top" Width="110" Height="76" BorderBrush="#FFAB1818" Click="MicDejun_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="diet.png"/>
+            </Button.Background>
+        </Button>
+        <Grid HorizontalAlignment="Left" Height="100" Margin="-361,57,0,0" VerticalAlignment="Top" Width="100"/>
+        <Ellipse x:Name="Elipsa" HorizontalAlignment="Left" Height="77" Margin="700,24,0,0" Stroke="Black" VerticalAlignment="Top" Width="74">
+            <Ellipse.Fill>
+                <ImageBrush ImageSource="shopping-cart.png"/>
+            </Ellipse.Fill>
+        </Ellipse>
+        <Label x:Name="Title" Content="" HorizontalAlignment="Left" Margin="213,24,0,0" VerticalAlignment="Top" Width="410" Height="66"/>
+        <Button Content="" HorizontalAlignment="Left" Margin="0,-1,0,0" VerticalAlignment="Top" Width="110" Height="56" BorderBrush="#FFD12424">
+            <Button.Background>
+                <ImageBrush ImageSource="checklist.png"/>
+            </Button.Background>
+        </Button>
+        <Button Content="" HorizontalAlignment="Left" Margin="0,55,0,0" VerticalAlignment="Top" Width="110" Height="53" BorderBrush="#FFB12B2B">
+            <Button.Background>
+                <ImageBrush ImageSource="operator.png"/>
+            </Button.Background>
+        </Button>
+        <Grid x:Name="GMeniu" HorizontalAlignment="Left" Height="481" Margin="112,3,-0.4,0" VerticalAlignment="Top" Width="682" Grid.RowSpan="2"/>
+        <Button Content="" HorizontalAlignment="Left" Margin="0,22,0,0" Grid.Row="1" VerticalAlignment="Top" Width="110" Height="83" BorderBrush="#FFB12626">
+            <Button.Background>
+                <ImageBrush ImageSource="salad.png"/>
+            </Button.Background>
+        </Button>
+        <Label Content="Label" HorizontalAlignment="Left" Margin="721,54,0,0" VerticalAlignment="Top"/>
+    </Grid>
+</Window>
